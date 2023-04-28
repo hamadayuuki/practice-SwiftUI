@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D441A4BE29FBA80500BB4465 /* TaskManagementAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D441A4BD29FBA80500BB4465 /* TaskManagementAppApp.swift */; };
-		D441A4C029FBA80500BB4465 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D441A4BF29FBA80500BB4465 /* ContentView.swift */; };
 		D441A4C229FBA80600BB4465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D441A4C129FBA80600BB4465 /* Assets.xcassets */; };
 		D441A4C529FBA80600BB4465 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D441A4C429FBA80600BB4465 /* Preview Assets.xcassets */; };
 		D441A4CF29FBA80600BB4465 /* TaskManagementAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D441A4CE29FBA80600BB4465 /* TaskManagementAppTests.swift */; };
 		D441A4D929FBA80600BB4465 /* TaskManagementAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D441A4D829FBA80600BB4465 /* TaskManagementAppUITests.swift */; };
 		D441A4DB29FBA80600BB4465 /* TaskManagementAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D441A4DA29FBA80600BB4465 /* TaskManagementAppUITestsLaunchTests.swift */; };
+		D4B90F3C29FBAE2E000D9756 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B90F3B29FBAE2E000D9756 /* Home.swift */; };
+		D4B90F3F29FBB198000D9756 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B90F3E29FBB198000D9756 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		D441A4BA29FBA80400BB4465 /* TaskManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D441A4BD29FBA80500BB4465 /* TaskManagementAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagementAppApp.swift; sourceTree = "<group>"; };
-		D441A4BF29FBA80500BB4465 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D441A4C129FBA80600BB4465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D441A4C429FBA80600BB4465 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D441A4CA29FBA80600BB4465 /* TaskManagementAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskManagementAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		D441A4D429FBA80600BB4465 /* TaskManagementAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskManagementAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D441A4D829FBA80600BB4465 /* TaskManagementAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagementAppUITests.swift; sourceTree = "<group>"; };
 		D441A4DA29FBA80600BB4465 /* TaskManagementAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagementAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4B90F3B29FBAE2E000D9756 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D4B90F3E29FBB198000D9756 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 		D441A4BC29FBA80400BB4465 /* TaskManagementApp */ = {
 			isa = PBXGroup;
 			children = (
+				D4B90F3D29FBB189000D9756 /* ViewModel */,
+				D4B90F3A29FBAE1E000D9756 /* View */,
 				D441A4BD29FBA80500BB4465 /* TaskManagementAppApp.swift */,
-				D441A4BF29FBA80500BB4465 /* ContentView.swift */,
 				D441A4C129FBA80600BB4465 /* Assets.xcassets */,
 				D441A4C329FBA80600BB4465 /* Preview Content */,
 			);
@@ -125,6 +128,22 @@
 				D441A4DA29FBA80600BB4465 /* TaskManagementAppUITestsLaunchTests.swift */,
 			);
 			path = TaskManagementAppUITests;
+			sourceTree = "<group>";
+		};
+		D4B90F3A29FBAE1E000D9756 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4B90F3B29FBAE2E000D9756 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4B90F3D29FBB189000D9756 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4B90F3E29FBB198000D9756 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D441A4C029FBA80500BB4465 /* ContentView.swift in Sources */,
+				D4B90F3F29FBB198000D9756 /* TaskViewModel.swift in Sources */,
+				D4B90F3C29FBAE2E000D9756 /* Home.swift in Sources */,
 				D441A4BE29FBA80500BB4465 /* TaskManagementAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
