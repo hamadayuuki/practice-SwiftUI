@@ -11,6 +11,13 @@ class TaskViewModel: ObservableObject {
     // MARK: Current Week Days
     @Published var currentWeek: [Date] = []
     @Published var tappedDay = Date()
+    @Published var storedTasks: [Task] = [
+        Task(taskTitle: "Meeting", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Icon Set", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Proto Type", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Check Assets", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Team Party", taskDescription: "taskDescription", taskDate: Date()),
+    ]
     
     init() {
         fetchCurrentWeek()
