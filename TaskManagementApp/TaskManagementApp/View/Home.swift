@@ -129,7 +129,17 @@ struct Home: View {
                     }
                     .hLeading()
                     
-                    Text(task.taskDate.formatted(date: .omitted,time: .shortened))
+                    VStack(spacing: 30) {
+                        Text(task.taskDate.formatted(date: .omitted,time: .shortened))
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .background(Color.white, in: RoundedRectangle(cornerRadius: 10))
+                        }
+                    }
                 }
                 .foregroundColor(.white)
             }
