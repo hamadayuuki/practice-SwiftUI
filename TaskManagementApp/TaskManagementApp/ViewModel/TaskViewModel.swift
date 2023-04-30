@@ -18,9 +18,25 @@ class TaskViewModel: ObservableObject {
         Task(taskTitle: "Check Assets", taskDescription: "taskDescription", taskDate: Date()),
         Task(taskTitle: "Team Party", taskDescription: "taskDescription", taskDate: Date()),
     ]
+    @Published var filteredTasks: [Task]?
     
     init() {
         fetchCurrentWeek()
+        filterTodayTasks()
+    }
+    
+    func filterTodayTasks() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let current = Calendar.current
+            let filterdTasks = self.storedTasks.filter {
+                return current.isDate($0.taskDate, inSameDayAs: Date())
+            }
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.filteredTasks = filterdTasks
+                }
+            }
+        }
     }
     
     func fetchCurrentWeek() {
