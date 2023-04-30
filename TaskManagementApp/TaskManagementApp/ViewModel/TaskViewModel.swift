@@ -65,4 +65,11 @@ class TaskViewModel: ObservableObject {
     func isTappedDay(date: Date) -> Bool {
         return Calendar.current.isDate(date, inSameDayAs: tappedDay)
     }
+    
+    func isCurrentHourTask(date: Date) -> Bool{
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let currentHour = calendar.component(.hour, from: Date())
+        return hour == currentHour
+    }
 }

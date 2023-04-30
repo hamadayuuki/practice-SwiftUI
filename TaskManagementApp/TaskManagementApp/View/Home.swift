@@ -106,7 +106,7 @@ struct Home: View {
         HStack(spacing: 10) {
             VStack(spacing: 10) {
                 Circle()
-                    .fill(.black)
+                    .fill(taskViewModel.isCurrentHourTask(date: task.taskDate) ? .black : .white)
                     .frame(width: 10, height: 10)
                     .background {
                         Circle()
@@ -131,22 +131,28 @@ struct Home: View {
                     
                     VStack(spacing: 30) {
                         Text(task.taskDate.formatted(date: .omitted,time: .shortened))
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.black)
-                                .padding(10)
-                                .background(Color.white, in: RoundedRectangle(cornerRadius: 10))
+                        
+                        if taskViewModel.isCurrentHourTask(date: task.taskDate) {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.black)
+                                    .padding(10)
+                                    .background(Color.white, in: RoundedRectangle(cornerRadius: 10))
+                            }
                         }
                     }
                 }
-                .foregroundColor(.white)
+                .foregroundColor(taskViewModel.isCurrentHourTask(date: task.taskDate) ? .white : .black)
             }
             .hLeading()
-            .padding()
-            .background(.black)
-            .cornerRadius(20)
+            .padding(taskViewModel.isCurrentHourTask(date: task.taskDate) ? 15 : 0)
+            .background (
+                Color(.black)
+                    .cornerRadius(20)
+                    .opacity(taskViewModel.isCurrentHourTask(date: task.taskDate) ? 1 : 0)
+            )
         }
         .hLeading()
     }
