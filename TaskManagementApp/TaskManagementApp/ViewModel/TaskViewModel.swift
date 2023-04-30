@@ -29,7 +29,7 @@ class TaskViewModel: ObservableObject {
         DispatchQueue.global(qos: .userInteractive).async {
             let current = Calendar.current
             let filterdTasks = self.storedTasks.filter {
-                return current.isDate($0.taskDate, inSameDayAs: Date())
+                return current.isDate($0.taskDate, inSameDayAs: self.tappedDay)
             }
             DispatchQueue.main.async {
                 withAnimation {

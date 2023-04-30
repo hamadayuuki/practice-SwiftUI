@@ -64,6 +64,9 @@ struct Home: View {
                         .background(.white)
                 }
             }
+            .onChange(of: taskViewModel.tappedDay) { newValue in
+                taskViewModel.filterTodayTasks()
+            }
         }
     }
     
