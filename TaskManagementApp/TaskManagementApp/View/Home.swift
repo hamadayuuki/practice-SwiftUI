@@ -56,6 +56,8 @@ struct Home: View {
                         } else {
                             ForEach(tasks) { task in
                                 TaskCardView(task: task)
+                                    .padding(.horizontal, 10)
+                                    .padding(.top, 10)
                             }
                         }
                     } else { }
@@ -99,7 +101,42 @@ struct Home: View {
     }
     
     private func TaskCardView(task: Task) -> some View {
-        Text(task.taskTitle)
+        HStack(spacing: 10) {
+            VStack(spacing: 10) {
+                Circle()
+                    .fill(.black)
+                    .frame(width: 10, height: 10)
+                    .background {
+                        Circle()
+                            .stroke(.black, lineWidth: 1)
+                            .padding(-3)
+                    }
+                
+                Rectangle()
+                    .fill(.black)
+                    .frame(width: 5)
+            }
+            
+            VStack {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text(task.taskTitle)
+                            .font(.title2.bold())
+                        Text(task.taskDescription)
+                            .font(.caption)
+                    }
+                    .hLeading()
+                    
+                    Text(task.taskDate.formatted(date: .omitted,time: .shortened))
+                }
+                .foregroundColor(.white)
+            }
+            .hLeading()
+            .padding()
+            .background(.black)
+            .cornerRadius(20)
+        }
+        .hLeading()
     }
 }
 
