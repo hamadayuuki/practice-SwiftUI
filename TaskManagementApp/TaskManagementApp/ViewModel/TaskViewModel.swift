@@ -13,6 +13,8 @@ class TaskViewModel: ObservableObject {
     @Published var tappedDay = Date()
     @Published var storedTasks: [Task] = [
         Task(taskTitle: "Meeting", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Meeting", taskDescription: "taskDescription", taskDate: Date()),
+        Task(taskTitle: "Meeting", taskDescription: "taskDescription", taskDate: Date()),
         Task(taskTitle: "Icon Set", taskDescription: "taskDescription", taskDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!),
         Task(taskTitle: "Proto Type", taskDescription: "taskDescription", taskDate: Calendar.current.date(byAdding: .day, value: 2, to: Date())!),
         Task(taskTitle: "Check Assets", taskDescription: "taskDescription", taskDate: Calendar.current.date(byAdding: .day, value: 3, to: Date())!),
