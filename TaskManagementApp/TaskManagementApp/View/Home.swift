@@ -49,6 +49,16 @@ struct Home: View {
                         }
                     }
                     .padding()
+                    
+                    if let tasks = taskViewModel.filteredTasks {
+                        if tasks.isEmpty {
+                            Text("filteredTasks is Empty")
+                        } else {
+                            ForEach(tasks) { task in
+                                TaskCardView(task: task)
+                            }
+                        }
+                    } else { }
                 } header: {
                     HeaderView()
                         .background(.white)
@@ -83,6 +93,10 @@ struct Home: View {
             }
         }
         .padding()
+    }
+    
+    private func TaskCardView(task: Task) -> some View {
+        Text(task.taskTitle)
     }
 }
 
